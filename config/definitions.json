@@ -52,6 +52,15 @@
             }
         },
         {
+            "name": "dead-letter-queue",
+            "vhost": "/",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {
+                "x-queue-type": "classic"
+            }
+        },
+        {
             "name": "youtube",
             "vhost": "/",
             "durable": true,
@@ -80,6 +89,15 @@
             "name": "videos",
             "vhost": "/",
             "type": "topic",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
+        },
+        {
+            "name": "dead-letter-queue",
+            "vhost": "/",
+            "type": "direct",
             "durable": true,
             "auto_delete": false,
             "internal": false,
