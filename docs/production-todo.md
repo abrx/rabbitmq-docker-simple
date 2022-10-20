@@ -11,3 +11,4 @@ Voici une liste non exhaustive de points à vérifier ou mettre en place avant l
   * Utiliser des utilisateurs dédiés pour chaque besoin
   * Monitorer l'utilisation des ressources, notamment la mémoire et le disque
   * Utiliser de préférence un cluster en quorum
+* Faire attention à bien versionner ses images
