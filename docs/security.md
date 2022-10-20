@@ -127,7 +127,7 @@ Total: 25 (UNKNOWN: 0, LOW: 22, MEDIUM: 3, HIGH: 0, CRITICAL: 0)
 
 ```
 
-On a donc plusieurs vulnérabilités **LOW** remontées par Trivy, et quelques MEDIUM, rien qui semble réellement bloquant dans notre cas.
+On a donc plusieurs vulnérabilités **LOW** remontées par Trivy, et quelques **MEDIUM**, rien qui semble réellement bloquant dans notre cas.
 Bien sûr il reste conseillé de procéder à une analyse au cas-par-cas avant de passer en production.
 
 ## Quand scanner ?
