@@ -57,6 +57,8 @@ Pour l'exécuter :
 podman run -d --hostname lapin-1 --name clapier-1 -p 8080:15672 abrxd/rabbitmq-docker-simple:v1.0
 ```
 
+L'IHM d'administration est joignable à `http://localhost:8080` avec l'utilisateur `guest:guest`
+
 ## Utilisation de l'image officielle Rabbitmq
 
 L'image de base utilisée est l'[image Rabbitmq officielle](https://hub.docker.com/_/rabbitmq) présente sur le docker hub.
