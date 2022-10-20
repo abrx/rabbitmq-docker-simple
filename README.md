@@ -2,19 +2,6 @@
 
 Le but de ce dépôt est la mise à disposition d'une image docker simple Rabbitmq, avec le plugin de management et des exemples d'utilisation en javascript.
 
-## Note sur le runtime utilisé
-
-La plupart des exemples et docs utilisent le client `docker`, mais nous lui préfèrerons le client [podman](https://podman.io/), plus moderne et plus sécurisé que docker.
-Il est à l'origine développé par Redhat pour être utilisé dans le toolkit développeur pour Openshift, mais peut tout à fait être utilisé indépendamment en remplacement à l'identique de docker pour la majorité des commandes:
-
-```
-podman pull ...
-podman images
-podman run ...
-podman ps -a
-```
-
-Si vous préférrez utiliser docker, toutes les commandes utilisées peuvent simplement être traduites de `podman cmd` vers `docker cmd` avec les mêmes arguments.
 
 ## Utilisation de l'image all-in-one
 
@@ -76,3 +63,17 @@ Voici quelques sujets qui sont détaillés séparémment :
 * La [TODOLIST](docs/production-todo.md) avant passage en production
 * Comment [mettre à jour](docs/upgrade.md) l'image de test
 * Comment [utiliser l'image officielle Rabbitmq](docs/image-officielle.md), utilisée pour construire celle fournie ici
+
+## Note sur le runtime utilisé
+
+La plupart des exemples et docs utilisent le client `docker`, mais nous lui préfèrerons le client [podman](https://podman.io/), plus moderne et plus sécurisé que docker.
+Il est à l'origine développé par Redhat pour être utilisé dans le toolkit développeur pour Openshift, mais peut tout à fait être utilisé indépendamment en remplacement à l'identique de docker pour la majorité des commandes:
+
+```
+podman pull ...
+podman images
+podman run ...
+podman ps -a
+```
+
+Si vous préférrez utiliser docker, toutes les commandes utilisées peuvent simplement être traduites de `podman cmd` vers `docker cmd` avec les mêmes arguments.
