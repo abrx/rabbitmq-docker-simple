@@ -17,4 +17,4 @@ npm install amqplib
 * Le passage de l'*exchange* à la *queue* se fait via le **Binding**, en définissant des *routing keys*.
 * Le **consumer** est celui qui va lire les messages dans une queue
 
-> Exemple d'article intéressant expliquant les bases du protocol AMQP: https://www.arolla.fr/blog/2012/11/amqp-101-part-1/
+> Les bases du protocol AMQP: https://www.rabbitmq.com/tutorials/amqp-concepts.html
