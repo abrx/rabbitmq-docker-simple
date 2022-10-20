@@ -10,6 +10,8 @@ On se base ici sur la librairie [amqplib](https://github.com/amqp-node/amqplib) 
 npm install amqplib
 ```
 
+Un exemple complet pour écrire/recevoir sur les queues en javascript est disponible [ici](https://www.rabbitmq.com/tutorials/tutorial-two-javascript.html).
+
 ## Rappel de la terminologie Rabbitmq
 
 * Le **producer** est un émetteur de messages qu'il publie dans un **exchange**
