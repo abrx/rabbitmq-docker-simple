@@ -68,11 +68,11 @@ A noter que :
 Le détail pour publier et consommer des messages en javascript est détaillé dans la [section dédiée](docs/javascript-connector.md). 
 
 
-## Focus
+## Pour aller plus loin
 
 Voici quelques sujets qui sont détaillés séparémment :
 
 * La [sécurisation de l'image](docs/security.md) via un outil de scan d'image
 * La [TODOLIST](docs/production-todo.md) avant passage en production
 * Comment [mettre à jour](docs/upgrade.md) l'image de test
-* Comment [utiliser l'image officielle Rabbitmq](docs/image-officielle.md), utilisée pour construire celle fournie
+* Comment [utiliser l'image officielle Rabbitmq](docs/image-officielle.md), utilisée pour construire celle fournie ici
