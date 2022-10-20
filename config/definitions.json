@@ -1,0 +1,124 @@
+{
+    "rabbit_version": "3.11.2",
+    "rabbitmq_version": "3.11.2",
+    "product_name": "RabbitMQ",
+    "product_version": "3.11.2",
+    "users": [
+        {
+            "name": "guest",
+            "password_hash": "/EmZ9jf9v9Qo1e5uvC2ROHzYpkQ8ylqIKIPZ0jp0aokQ5bfY",
+            "hashing_algorithm": "rabbit_password_hashing_sha256",
+            "tags": [
+                "administrator"
+            ],
+            "limits": {}
+        }
+    ],
+    "vhosts": [
+        {
+            "name": "/"
+        }
+    ],
+    "permissions": [
+        {
+            "user": "guest",
+            "vhost": "/",
+            "configure": ".*",
+            "write": ".*",
+            "read": ".*"
+        }
+    ],
+    "topic_permissions": [],
+    "parameters": [],
+    "global_parameters": [
+        {
+            "name": "internal_cluster_id",
+            "value": "rabbitmq-cluster-id-GaR6lEUokTuFTocZpEfP9w"
+        }
+    ],
+    "policies": [],
+    "queues": [
+        {
+            "name": "dailymotion",
+            "vhost": "/",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {
+                "x-dead-letter-exchange": "dead-letter-queue",
+                "x-max-priority": 3,
+                "x-message-ttl": 600000,
+                "x-overflow": "reject-publish",
+                "x-queue-type": "classic"
+            }
+        },
+        {
+            "name": "youtube",
+            "vhost": "/",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {
+                "x-dead-letter-exchange": "dead-letter-queue",
+                "x-max-priority": 3,
+                "x-message-ttl": 60000,
+                "x-queue-type": "classic"
+            }
+        },
+        {
+            "name": "to_review",
+            "vhost": "/",
+            "durable": true,
+            "auto_delete": false,
+            "arguments": {
+                "x-dead-letter-exchange": "dead-letter-queue",
+                "x-message-ttl": 600000,
+                "x-queue-type": "classic"
+            }
+        }
+    ],
+    "exchanges": [
+        {
+            "name": "videos",
+            "vhost": "/",
+            "type": "topic",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
+        },
+        {
+            "name": "broadcast2all",
+            "vhost": "/",
+            "type": "fanout",
+            "durable": true,
+            "auto_delete": false,
+            "internal": false,
+            "arguments": {}
+        }
+    ],
+    "bindings": [
+        {
+            "source": "videos",
+            "vhost": "/",
+            "destination": "dailymotion",
+            "destination_type": "queue",
+            "routing_key": "*.prod.dailymotion",
+            "arguments": {}
+        },
+        {
+            "source": "videos",
+            "vhost": "/",
+            "destination": "youtube",
+            "destination_type": "queue",
+            "routing_key": "*.prod.youtube",
+            "arguments": {}
+        },
+        {
+            "source": "videos",
+            "vhost": "/",
+            "destination": "to_review",
+            "destination_type": "queue",
+            "routing_key": "videos.dev.*",
+            "arguments": {}
+        }
+    ]
+}
