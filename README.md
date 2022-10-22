@@ -97,7 +97,7 @@ A noter que :
 
 * le nom `clapier-1` correspond au nom du container
 * le hostname `lapin-1` correspond au nom du node Rabbitmq
-* on expose l'IHM de management sur le port 8080 (le container expose le 15672), on peut s'y connecter sur `http://localhost:8080` avec l'utilisateur `guest:guest`
+* on expose l'IHM de management sur le port 15672, on peut s'y connecter sur `http://localhost:15672` avec l'utilisateur `guest:guest`
 * Le port 5672 sert aux envois/réception avec le protocole AMQP
 
 ### Publier et consommer des messages en javascript
@@ -112,6 +112,36 @@ NB: La majorité des éléments présentés ici sont adaptés des [tutoriels](ht
 * la gestion des [priorités](https://www.rabbitmq.com/tutorials/tutorial-four-javascript.html)
 * l'utilisation de [Remote Procedure Call ](https://www.rabbitmq.com/tutorials/tutorial-six-javascript.html) (RPC)
 
+
+## Utiliser l'IHM de management
+
+En se connectant sur `http://localhost:15672` avec l'utilisateur `guest:guest` on peut avoir un overview des messages publiés et consommés:
+
+![overview](/rabbitmq-docker-simple/docs/img/overview.png)
+
+On peut voir la liste des connexions actives:
+
+![overview](/rabbitmq-docker-simple/docs/img/connexions.png)
+
+Des exchanges et des queues sur lesquels on peut publier : 
+
+![overview](/rabbitmq-docker-simple/docs/img/exchanges.png)
+
+![overview](/rabbitmq-docker-simple/docs/img/queues.png)
+
+Ou publier et récupérer des images à la main pour tester (attention la récupération est comme un `pop()`, elle consomme le message)
+
+![overview](/rabbitmq-docker-simple/docs/img/get_msg.png)
+
+Par contre les modifications faites à la main ne survivront pas à la suppression du container, on peut exporter la définition facilement via la vue overview:
+
+![overview](/rabbitmq-docker-simple/docs/img/definition.png)
+
+Puis si on veut la persister, mettre à jour le fichier `config/definitions.json` et reconstruire l'image:
+
+```bash
+podman build -t rabbitmq-docker-simple:v1.0 .
+```
 
 ## Pour aller plus loin
 
