@@ -13,4 +13,10 @@ Voici une liste non exhaustive de points à vérifier ou mettre en place avant l
 * Faire un test de failover
 * Faire attention à bien versionner ses images
 
+Et de même au niveau du code pour publier et recevoir des images, attention à gérer :
+
+* les erreurs potentielles
+* les connections recovery
+* la parallélisation
+
 > Pour rappel, Rabbitmq fourni sa [Production Checklist](https://www.rabbitmq.com/production-checklist.html) 
