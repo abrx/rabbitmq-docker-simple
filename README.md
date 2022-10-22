@@ -117,25 +117,25 @@ NB: La majorité des éléments présentés ici sont adaptés des [tutoriels](ht
 
 En se connectant sur `http://localhost:15672` avec l'utilisateur `guest:guest` on peut avoir un overview des messages publiés et consommés:
 
-![overview](/rabbitmq-docker-simple/docs/img/overview.png)
+![overview](docs/img/overview.png)
 
 On peut voir la liste des connexions actives:
 
-![overview](/rabbitmq-docker-simple/docs/img/connexions.png)
+![connexions](docs/img/connexions.png)
 
 Des exchanges et des queues sur lesquels on peut publier : 
 
-![overview](/rabbitmq-docker-simple/docs/img/exchanges.png)
+![exchanges](/docs/img/exchanges.png)
 
-![overview](/rabbitmq-docker-simple/docs/img/queues.png)
+![queues](docs/img/queues.png)
 
 Ou publier et récupérer des images à la main pour tester (attention la récupération est comme un `pop()`, elle consomme le message)
 
-![overview](/rabbitmq-docker-simple/docs/img/get_msg.png)
+![pop](docs/img/get_msg.png)
 
 Par contre les modifications faites à la main ne survivront pas à la suppression du container, on peut exporter la définition facilement via la vue overview:
 
-![overview](/rabbitmq-docker-simple/docs/img/definition.png)
+![definition](docs/img/definition.png)
 
 Puis si on veut la persister, mettre à jour le fichier `config/definitions.json` et reconstruire l'image:
 
