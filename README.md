@@ -58,10 +58,10 @@ podman pull abrxd/rabbitmq-docker-simple:v1.0
 Pour l'exécuter :
 
 ```bash
-podman run -d --hostname lapin-1 --name clapier-1 -p 8080:15672 -p 5672:5672 abrxd/rabbitmq-docker-simple:v1.0
+podman run -d --hostname lapin-1 --name clapier-1 -p 15672:15672 -p 5672:5672 abrxd/rabbitmq-docker-simple:v1.0
 ```
 
-L'IHM d'administration est joignable à `http://localhost:8080` avec l'utilisateur `guest:guest`
+L'IHM d'administration est joignable à `http://localhost:15672` avec l'utilisateur `guest:guest`
 
 A noter que :
 
