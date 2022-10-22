@@ -17,10 +17,12 @@ amqp.connect('amqp://localhost', function(error0, connection) {
             throw error1;
         }
         
-        // On déclare la queue utilisée et le message
+        // On déclare la queue utilisée
         // Ici on utilise l'exchange par défaut qui porte le même nom de la queue, sans faire de routage
         var queue = 'to_review';
-        var msg = 'Hello World!';
+
+        // Le message envoyé est passé en arg au script ou Hello World par défaut
+        var msg = process.argv.slice(2).join(' ') || "Hello World!";
 
         // On envoie un message directement à une queue, sans utiliser le routage
         channel.sendToQueue(queue, Buffer.from(msg));
