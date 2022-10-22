@@ -17,13 +17,9 @@ amqp.connect('amqp://localhost', function(error0, connection) {
             throw error1;
         }
         
-        // On déclare une nouvelle queue
+        // On déclare la queue et le message
         var queue = 'to_review';
         var msg = 'Hello World!';
-
-        channel.assertQueue(queue, {
-            durable: false
-        });
 
         // On envoie un message
         channel.sendToQueue(queue, Buffer.from(msg));
