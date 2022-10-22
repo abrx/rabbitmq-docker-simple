@@ -21,9 +21,8 @@ amqp.connect('amqp://localhost', function(error0, connection) {
         var queue = 'to_review';
         var msg = 'Hello World!';
 
-        // On envoie un message
+        // On envoie un message directement à une queue, sans utiliser le routage
         channel.sendToQueue(queue, Buffer.from(msg));
-
         console.log(" [x] Sent %s", msg);
     });
 
