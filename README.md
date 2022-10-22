@@ -1,6 +1,7 @@
 # Utilisation d'un rabbitmq simple avec docker
 
 Le but de ce dépôt est la mise à disposition d'une image docker simple Rabbitmq, avec le plugin de management et des exemples d'utilisation en javascript.
+L'image fournie est à des fins de POC/dev uniquement, des informatiosn supplémentaires sont fournies pour un passage en prod.
 
 ## Prérequis
 
